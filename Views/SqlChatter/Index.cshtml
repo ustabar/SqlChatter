@@ -1,0 +1,70 @@
+﻿@model OpenAIWebApp.Models.IndexModel
+
+@{
+    ViewData["Title"] = "SqlChatter";
+}
+
+<h1>SqlChatter</h1>
+
+<div class="row">
+
+    <div class="col-md-12">
+
+    <form asp-controller="SqlChatter" asp-action="Index" method="post">
+        <div class="form-group">
+            <label for="Question">Question</label>
+            <input type="text" class="form-control" id="Question" name="IndexData.Question" />
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+        <hr />
+
+        @if (!string.IsNullOrEmpty(Model._indexData.Error))
+        {
+            <p><b>Error:</b> @Model._indexData.Error</p>
+        }
+
+        @if (!string.IsNullOrEmpty(Model._indexData.Summary))
+        {
+            <p><b>AI generated summary:</b> @Model._indexData.Summary</p>
+        }
+
+        @if (!string.IsNullOrEmpty(Model._indexData.Query))
+        {
+            <p><b>AI generated query:</b> @Model._indexData.Query</p>
+        }
+
+        @if (Model._indexData.RowData != null)
+        {
+            <p><b>Data results:</b></p>
+        }
+
+        <table class="table table-striped">
+            @if (Model._indexData.RowData != null)
+            {
+                foreach (var row in Model._indexData.RowData)
+                {
+                    <tr>
+                        @foreach (var cell in row)
+                        {
+                            <td>@cell</td>
+                        }
+                    </tr>
+                }
+            }
+        </table>
+
+    </div>
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#inputText').on('input', function () {
+            this.style.height = 'auto';
+            this.style.height = (this.scrollHeight) + 'px';
+        });
+    });
+</script>
