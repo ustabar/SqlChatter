@@ -12,9 +12,9 @@ public class DataService
     public static void ExecuteCommand(string query)
     {
         SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-        builder.DataSource = "sqlforopenai.database.windows.net";
-        builder.UserID = "barut";
-        builder.Password = "Deneme!12345";
+        builder.DataSource = "<dbname>.database.windows.net";
+        builder.UserID = "<username>";
+        builder.Password = "<Password>";
         builder.InitialCatalog = "sqlforopenai";
 
         var connectionString = builder.ConnectionString;
