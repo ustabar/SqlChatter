@@ -7,8 +7,9 @@ tell me about the used related technologies
 in the project?
 
 ---
-@workspace #file:SqlChatterController.cs içerisinde 
-#selection metodundaki akışı özetler misin?
+@workspace #file:SqlChatterController.cs içerisindeki
+OnPostAsync metodundaki akışı özetler misin?
+Bu metodu daha sade ve anlaşılır hale getirebilir misin?
 
 ---
 @workspace create a markup file that shows 
