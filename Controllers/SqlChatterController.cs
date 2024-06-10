@@ -115,8 +115,8 @@ namespace OpenAIWebApp.Controllers
         private OpenAIClient CreateOpenAIClient()
         {
             // Call your service here using the inputText
-            string? oaiEndpoint = "https://barutaidemo.openai.azure.com/";
-            string? oaiKey = "c5c31b1c1aaa4919ba701fbcec03f2f8";
+            string? oaiEndpoint = "******";
+            string? oaiKey = "******";
 
             return new OpenAIClient(
                 // new Uri(Configuration["OpenAI:Endpoint"]),
